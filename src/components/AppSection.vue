@@ -1,7 +1,7 @@
 <template>
     <div>
-        SECTION
-    <app-section-banner />
+        <app-section-banner />
+        <app-section-news />
     
     </div>
 
@@ -9,9 +9,13 @@
 
 <script>
 import AppSectionBanner from './AppSectionBanner.vue'
+import AppSectionNews from './AppSectionNews.vue'
 
 export default {
-  components: { AppSectionBanner },
+  components: { 
+      AppSectionBanner, 
+      AppSectionNews 
+    },
     
 }
 </script>
