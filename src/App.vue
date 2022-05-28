@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <app-header />
-    <app-section />
+    <app-header @select-championship="changeChampionship"/>
+    <app-section :championship="championship"/>
     <app-footer />
     
   </div>
@@ -19,6 +19,16 @@ export default {
     AppHeader,
     AppSection,
     AppFooter
+  },
+  data() {
+    return {
+      championship: 'Campeonato Brasileiro'
+    }
+  },
+  methods: {
+    changeChampionship(value) {
+      this.championship = value
+    }
   }
 }
 </script>
