@@ -8,19 +8,37 @@
         </div>
         <app-section-banner />
         <app-section-news />
+
+        <div class="container">
+            <div class="row my-club mt-5">
+                <div class="col-6">
+                    <h2>Seu clube é: {{ myClub }}</h2>
+                </div>
+                <div class="col-6">
+                    <app-input v-model="myClub"/>
+                </div>
+            </div>
+        </div>
     
     </div>
 
 </template>
 
 <script>
+import AppInput from './AppInput.vue'
 import AppSectionBanner from './AppSectionBanner.vue'
 import AppSectionNews from './AppSectionNews.vue'
 
 export default {
     components: { 
       AppSectionBanner, 
-      AppSectionNews 
+      AppSectionNews,
+        AppInput 
+    },
+    data() {
+        return {
+            myClub: 'Hcode treinamento'
+        }
     },
     props: {
         championship: String
