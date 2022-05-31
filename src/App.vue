@@ -1,7 +1,16 @@
 <template>
   <div id="app">
-    <app-header @select-championship="changeChampionship"/>
-    <app-section :championship="championship"/>
+
+    <app-header 
+      @select-championship="changeChampionship"
+      @change-component="changeComponent"
+    />
+
+    <app-section 
+      :championship="championship"
+      :current-component="currentSectionComponent"
+      />
+      
     <app-footer />
     
   </div>
@@ -22,13 +31,36 @@ export default {
   },
   data() {
     return {
-      championship: 'Campeonato Brasileiro'
+      championship: 'Campeonato Brasileiro',
+      currentSectionComponent: 'AppSectionBanner'
     }
   },
   methods: {
     changeChampionship(value) {
       this.championship = value
+
+    },
+    changeComponent(value) {
+      
+      let component
+
+      switch (value) {
+        case 'home':
+          default:
+            component = 'AppSectionBanner'
+          
+          break;
+        
+        case 'news':
+          component = 'AppSectionNews'
+
+          break;
+      }
+
+      this.currentSectionComponent = component
+
     }
+
   }
 }
 </script>

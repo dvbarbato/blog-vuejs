@@ -6,8 +6,10 @@
                 <h3>Você está vendo a notícia do: {{ championship }}</h3>
             </div>
         </div>
-        <app-section-banner />
-        <app-section-news />
+
+        <component :is="currentComponent"></component>
+
+       
 
         <div class="container">
             <div class="row my-club mt-5">
@@ -33,7 +35,7 @@ export default {
     components: { 
       AppSectionBanner, 
       AppSectionNews,
-        AppInput 
+      AppInput 
     },
     data() {
         return {
@@ -41,7 +43,8 @@ export default {
         }
     },
     props: {
-        championship: String
+        championship: String,
+        currentComponent: String
     }
 
     
