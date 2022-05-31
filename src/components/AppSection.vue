@@ -29,12 +29,12 @@
 <script>
 import AppInput from './AppInput.vue'
 import AppSectionBanner from './AppSectionBanner.vue'
-import AppSectionNews from './AppSectionNews.vue'
+
 
 export default {
     components: { 
       AppSectionBanner, 
-      AppSectionNews,
+      AppSectionNews: () => import('./AppSectionNews.vue'),
       AppInput 
     },
     data() {
