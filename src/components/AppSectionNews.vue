@@ -10,7 +10,9 @@
                 :newsTitle="notice.title"
                 :newsContent="notice.content"
                 :newsDate="notice.date"
-            />
+            >
+                <p>{{ notice.content | truncate(200) }}</p>
+            </app-section-news-individual>
 
         </div>
     </section>
