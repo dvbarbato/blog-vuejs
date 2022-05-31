@@ -3,29 +3,15 @@
         <div class="container">
         
             <app-section-news-individual 
-                img-name="news1.jpg"
-                img-info="Notícia 1"
-                newsTitle="Começam os treinos para a nova temporada"
-                newsContent="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quidem, dolore ipsum quae fugit voluptatem natus consequatur ullam assumenda sit nesciunt odio veniam eligendi tempore possimus non maiores! Quisquam, nemo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum iure consectetur voluptas odit, ea sed quos blanditiis facere, omnis maxime porro sint culpa cupiditate exercitationem corporis fuga facilis eum adipisci!"
-                newsDate="01/02/2021"
+                v-for="notice in news" 
+                :key="notice.id"
+                :img-name="notice.img"
+                :img-info="notice.imgInfo"
+                :newsTitle="notice.title"
+                :newsContent="notice.content"
+                :newsDate="notice.date"
             />
 
-            <app-section-news-individual 
-                img-name="news2.jpg"
-                img-info="Notícia 2"
-                newsTitle="Jogo do Inter termina empatado"
-                newsContent="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quidem, dolore ipsum quae fugit voluptatem natus consequatur ullam assumenda sit nesciunt odio veniam eligendi tempore possimus non maiores! Quisquam, nemo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum iure consectetur voluptas odit, ea sed quos blanditiis facere, omnis maxime porro sint culpa cupiditate exercitationem corporis fuga facilis eum adipisci!"
-                newsDate="03/02/2021"
-            />
-
-            <app-section-news-individual 
-                img-name="news3.jpg"
-                img-info="Notícia 3"
-                newsTitle="Real vai inauguarar o novo estádio na sexta-feira"
-                newsContent="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quidem, dolore ipsum quae fugit voluptatem natus consequatur ullam assumenda sit nesciunt odio veniam eligendi tempore possimus non maiores! Quisquam, nemo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum iure consectetur voluptas odit, ea sed quos blanditiis facere, omnis maxime porro sint culpa cupiditate exercitationem corporis fuga facilis eum adipisci!"
-                newsDate="06/02/2021"
-            />
-        
         </div>
     </section>
 </template>
@@ -36,6 +22,37 @@ export default {
   components: {
       AppSectionNewsIndividual
     },
+    data() {
+        return {
+            news: []
+        }
+    },
+    created() {
+        // Transformar o data em JSON
+        this.news = [{
+            id: 1,
+            title: 'Começam os treinos para a nova temporada',
+            content: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quidem, dolore ipsum quae fugit voluptatem natus consequatur ullam assumenda sit nesciunt odio veniam eligendi tempore possimus non maiores! Quisquam, nemo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum iure consectetur voluptas odit, ea sed quos blanditiis facere, omnis maxime porro sint culpa cupiditate exercitationem corporis fuga facilis eum adipisci!',
+            date: '2021-01-04',
+            img: 'news1.jpg',
+            imgInfo: 'Notícia 1'
+        }, {
+            id: 2,
+            title: 'Jogo do Inter termina empatado',
+            content: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quidem, dolore ipsum quae fugit voluptatem natus consequatur ullam assumenda sit nesciunt odio veniam eligendi tempore possimus non maiores! Quisquam, nemo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum iure consectetur voluptas odit, ea sed quos blanditiis facere, omnis maxime porro sint culpa cupiditate exercitationem corporis fuga facilis eum adipisci!',
+            date: '2021-01-05',
+            img: 'news2.jpg',
+            imgInfo: 'Notícia 2'
+        }, {
+            id: 3,
+            title: 'Real vai inauguarar o novo estádio na sexta-feira',
+            content: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quidem, dolore ipsum quae fugit voluptatem natus consequatur ullam assumenda sit nesciunt odio veniam eligendi tempore possimus non maiores! Quisquam, nemo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum iure consectetur voluptas odit, ea sed quos blanditiis facere, omnis maxime porro sint culpa cupiditate exercitationem corporis fuga facilis eum adipisci!',
+            date: '2021-01-09',
+            img: 'news3.jpg',
+            imgInfo: 'Notícia 3'
+
+        }]
+    }
     
 }
 </script>
