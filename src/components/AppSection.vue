@@ -29,6 +29,7 @@
 <script>
 import AppInput from './AppInput.vue'
 import AppSectionBanner from './AppSectionBanner.vue'
+import { mapGetters } from 'vuex' //As { } serve para trazer somente o module mapState sem ficar pesado
 
 
 export default {
@@ -39,15 +40,19 @@ export default {
     },
     data() {
         return {
-            myClub: 'Hcode treinamento'
+            
         }
     },
     props: {
-        championship: String,
-        currentComponent: String
-    }
 
-    
+        currentComponent: String
+    },
+    computed: {
+        ...mapGetters({
+            championship: 'getChampionship',
+            myClub: 'getClubName'
+        }),
+    }
 }
 </script>
 
