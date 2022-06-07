@@ -20,6 +20,8 @@
 import AppHeader from './components/AppHeader.vue'
 import AppSection from './components/AppSection.vue'
 import AppFooter from './components/AppFooter.vue'
+import { mapActions } from 'vuex'
+
 
 
 export default {
@@ -36,10 +38,7 @@ export default {
     }
   },
   methods: {
-    changeChampionship(value) {
-      this.championship = value
-
-    },
+      ...mapActions(['changeChampionship']), 
     changeComponent(value) {
       
       let component

@@ -41,5 +41,15 @@ export default new Vuex.Store({
         getNews(state) {
             return state.news
         }
+    },
+    mutations: {
+        setChampionship(state, newValue) {
+            state.championship = newValue
+        }
+    },
+    actions: {
+        changeChampionship(context, value) {
+            context.commit('setChampionship', value)
+        }
     }
 })
