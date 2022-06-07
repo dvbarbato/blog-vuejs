@@ -17,7 +17,7 @@
                     <h2>Seu clube é: {{ myClub }}</h2>
                 </div>
                 <div class="col-6">
-                    <app-input v-model="myClub"/>
+                    <app-input />
                 </div>
             </div>
         </div>

@@ -7,7 +7,6 @@
     />
 
     <app-section 
-      :championship="championship"
       :current-component="currentSectionComponent"
       />
       
