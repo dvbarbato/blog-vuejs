@@ -21,8 +21,6 @@ import AppSection from './components/AppSection.vue'
 import AppFooter from './components/AppFooter.vue'
 import { mapActions } from 'vuex'
 
-
-
 export default {
   name: 'App',
   components: {
